@@ -1,0 +1,40 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skill package
+        run: python scripts/check_skill.py
+
+      - name: Install into a fake DSH skills dir
+        run: |
+          chmod +x scripts/install.sh
+          DSH_SKILLS_DIR="${RUNNER_TEMP}/dsh-skills" ./scripts/install.sh dsh
+          test -f "${RUNNER_TEMP}/dsh-skills/colleague-cheng-yi-jing/SKILL.md"
+          head -5 "${RUNNER_TEMP}/dsh-skills/colleague-cheng-yi-jing/SKILL.md"
+
+      - name: Validate installed copy
+        run: |
+          cd "${RUNNER_TEMP}/dsh-skills/colleague-cheng-yi-jing"
+          python - <<'PY'
+          import io, re, sys
+          s = io.open("SKILL.md", encoding="utf-8").read()
+          assert s.startswith("---"), "frontmatter missing"
+          name = re.search(r"^name:\s*(.+)$", s, re.M).group(1).strip()
+          assert name == "colleague-cheng-yi-jing", name
+          for sec in ("subject_definitions", "summary", "retention_analysis",
+                      "detailed_description", "overall_soundscape", "non_diegetic_music"):
+              assert sec in s, sec
+          print("installed copy OK:", name)
+          PY
