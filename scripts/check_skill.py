@@ -8,7 +8,7 @@ NAME = 'celebrity-cheng-yi-jing'
 FILES = ['SKILL.md', 'work.md', 'persona.md', 'work_skill.md', 'persona_skill.md', 'meta.json', 'manifest.json']
 SIX = ['subject_definitions', 'summary', 'retention_analysis', 'detailed_description',
        'overall_soundscape', 'non_diegetic_music']
-FORBIDDEN = ['米哥']
+FORBIDDEN = ['\u7c73\u54e5']  # 来源人名：码位转义存放，公开仓库不出现明文
 fails = []
 
 def rd(n):
