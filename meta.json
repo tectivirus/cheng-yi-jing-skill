@@ -1,0 +1,161 @@
+{
+  "name": "程一镜",
+  "display_name": "程一镜",
+  "character": "celebrity",
+  "research_profile": "budget-friendly",
+  "classification": {
+    "language": "zh-CN",
+    "tags": [
+      "AI短剧",
+      "MiniMax H3",
+      "Ref2VA",
+      "分镜",
+      "提示词工程",
+      "质量门禁",
+      "Agent 规范",
+      "影视工业化"
+    ],
+    "gallery_category": "Celebrity"
+  },
+  "profile": {
+    "identity": "AI 短剧分镜执行人格｜执行 MiniMax H3 Ref2VA 的 V8 规范集（总骨架 / 精细分镜 / Agent 执行 / 完整教程）"
+  },
+  "summary": "程一镜：按 MiniMax H3 Ref2VA 的 V8 规范集干活——六段式提示词、Shot Card、G/CG 门禁、单主因返修与停止线；用户只提需求，台账与编号由 AI 维护。",
+  "knowledge_sources": [
+    "guifan（本地目录，不入库）"
+  ],
+  "type": "celebrity",
+  "lifecycle": {
+    "status": "active",
+    "created_at": "2026-10-29T02:25:52.936783+00:00",
+    "updated_at": "2026-10-29T02:25:52.936783+00:00",
+    "version": "v11"
+  },
+  "generation": {
+    "engine": "distilly",
+    "character": "celebrity",
+    "research_profile": "budget-friendly",
+    "preset": "distilly.celebrity.v1",
+    "prompt_bundle": {
+      "preset": "distilly.celebrity.v1",
+      "intake": "prompts/celebrity/intake.md",
+      "research": "prompts/celebrity/research.md",
+      "work_analyzer": "prompts/shared/work_analyzer.md",
+      "persona_analyzer": "prompts/celebrity/persona_analyzer.md",
+      "work_builder": "prompts/shared/work_builder.md",
+      "persona_builder": "prompts/celebrity/persona_builder.md",
+      "merger": "prompts/celebrity/merger.md",
+      "correction_handler": "prompts/shared/correction_handler.md"
+    },
+    "research_profile_bundle": {
+      "research": "prompts/celebrity/research.md",
+      "persona_analyzer": "prompts/celebrity/persona_analyzer.md",
+      "persona_builder": "prompts/celebrity/persona_builder.md"
+    },
+    "research_profile_references": [],
+    "merge_strategy": "compact",
+    "quality_profile": "budget-friendly",
+    "knowledge_dirs": [
+      "docs",
+      "messages",
+      "emails",
+      "research/raw",
+      "research/merged",
+      "research/reviews",
+      "transcripts",
+      "subtitles"
+    ],
+    "storage_root": "skills/celebrity",
+    "research_tools": {
+      "public_x_posts": "tools/research/xquik_public_posts.py",
+      "subtitle_downloader": "tools/research/download_subtitles.sh",
+      "subtitle_cleaner": "tools/research/srt_to_transcript.py",
+      "research_merger": "tools/research/merge_research.py",
+      "quality_check": "tools/research/quality_check.py"
+    },
+    "created_from": [
+      "guifan（本地目录，不入库）"
+    ],
+    "corrections_count": 0
+  },
+  "source_context": {
+    "domain": "public",
+    "relationship_to_user": "public_figure",
+    "is_real_person": true,
+    "is_public_figure": true,
+    "is_fictional": false
+  },
+  "engine": {
+    "name": "distilly",
+    "kind": "meta-skill",
+    "character": "celebrity",
+    "research_profile": "budget-friendly",
+    "preset": "distilly.celebrity.v1",
+    "prompt_bundle": {
+      "preset": "distilly.celebrity.v1",
+      "intake": "prompts/celebrity/intake.md",
+      "research": "prompts/celebrity/research.md",
+      "work_analyzer": "prompts/shared/work_analyzer.md",
+      "persona_analyzer": "prompts/celebrity/persona_analyzer.md",
+      "work_builder": "prompts/shared/work_builder.md",
+      "persona_builder": "prompts/celebrity/persona_builder.md",
+      "merger": "prompts/celebrity/merger.md",
+      "correction_handler": "prompts/shared/correction_handler.md"
+    },
+    "research_profile_bundle": {
+      "research": "prompts/celebrity/research.md",
+      "persona_analyzer": "prompts/celebrity/persona_analyzer.md",
+      "persona_builder": "prompts/celebrity/persona_builder.md"
+    },
+    "research_profile_references": [],
+    "merge_strategy": "compact",
+    "quality_profile": "budget-friendly",
+    "knowledge_dirs": [
+      "docs",
+      "messages",
+      "emails",
+      "research/raw",
+      "research/merged",
+      "research/reviews",
+      "transcripts",
+      "subtitles"
+    ],
+    "storage_root": "skills/celebrity",
+    "research_tools": {
+      "public_x_posts": "tools/research/xquik_public_posts.py",
+      "subtitle_downloader": "tools/research/download_subtitles.sh",
+      "subtitle_cleaner": "tools/research/srt_to_transcript.py",
+      "research_merger": "tools/research/merge_research.py",
+      "quality_check": "tools/research/quality_check.py"
+    }
+  },
+  "schema_version": "3",
+  "slug": "cheng-yi-jing",
+  "kind": "meta-skill",
+  "subtype": null,
+  "preset": "distilly.celebrity.v1",
+  "id": "meta-skill.celebrity.cheng-yi-jing",
+  "artifacts": {
+    "combined_skill": "SKILL.md",
+    "work_skill": "work_skill.md",
+    "persona_skill": "persona_skill.md",
+    "work_doc": "work.md",
+    "persona_doc": "persona.md",
+    "manifest": "manifest.json",
+    "combined_name": "celebrity-cheng-yi-jing",
+    "work_name": "celebrity-cheng-yi-jing-work",
+    "persona_name": "celebrity-cheng-yi-jing-persona",
+    "combined_command": "celebrity-cheng-yi-jing",
+    "work_command": "celebrity-cheng-yi-jing-work",
+    "persona_command": "celebrity-cheng-yi-jing-persona"
+  },
+  "compat": {
+    "legacy_command": "/create-icon",
+    "legacy_storage_root": "skills/celebrity",
+    "legacy_type": "celebrity"
+  },
+  "created_at": "2026-10-29T02:25:52.936783+00:00",
+  "updated_at": "2026-10-29T02:25:52.936783+00:00",
+  "version": "v11",
+  "corrections_count": 0
+}

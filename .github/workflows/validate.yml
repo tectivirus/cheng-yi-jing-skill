@@ -1,0 +1,30 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skill package
+        run: python scripts/check_skill.py
+
+      - name: Install into a fake skill dir
+        run: |
+          chmod +x scripts/install.sh
+          DSH_SKILLS_DIR="${RUNNER_TEMP}/dsh-skills" ./scripts/install.sh dsh
+          test -f "${RUNNER_TEMP}/dsh-skills/celebrity-cheng-yi-jing/SKILL.md"
+          test -f "${RUNNER_TEMP}/dsh-skills/celebrity-cheng-yi-jing/tools/lint_h3_prompt.py"
+
+      - name: Lint golden sample
+        run: |
+          cd "${RUNNER_TEMP}/dsh-skills/celebrity-cheng-yi-jing"
+          python tools/lint_h3_prompt.py fixtures/golden.txt
